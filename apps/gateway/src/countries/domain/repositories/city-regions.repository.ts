@@ -1,4 +1,4 @@
-import { Paginated, PaginationOption } from '../../../common/database';
+import { Paginated, PaginationOption } from '@repo/types/database';
 import { CityRegionEntity } from '../entities/city-region.entity';
 
 export const CITY_REGIONS_REPOSITORY_TOKEN = Symbol('CityRegionsRepository');

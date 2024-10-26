@@ -1,4 +1,4 @@
-import { Paginated, PaginationOption } from '../../../common/database';
+import { Paginated, PaginationOption } from '@repo/types/database';
 import { StateEntity } from '../entities/state.entity';
 
 export const STATES_REPOSITORY_TOKEN = Symbol('StatesRepository');

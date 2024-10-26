@@ -6,7 +6,7 @@ import { randomUUID } from 'crypto';
 import { JwtPayload, decode, sign, verify } from 'jsonwebtoken';
 import { DateTime, Duration } from 'luxon';
 import { CacheService } from '../../../common/cache/services';
-import { randomStringAsync } from '../../../common/string';
+import { randomStringAsync } from '@repo/utils/string';
 import { Email, Mobile, UserId } from '@repo/types/common.types';
 import { Permission } from '../../../users/roles/domain/entities/role.entity';
 

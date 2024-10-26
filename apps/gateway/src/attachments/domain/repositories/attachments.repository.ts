@@ -1,4 +1,4 @@
-import { Paginated } from '../../../common/database';
+import { Paginated } from '@repo/types/database';
 import { AttachmentEntity } from '../entities/attachments.entity';
 
 export interface FindAttachmentOptions {

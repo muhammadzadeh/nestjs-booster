@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { Paginated } from '../../../../../common/database';
+import { Paginated } from '@repo/types/database';
 import { ListResponse } from '../../../../../common/serialization';
 import { UserEntity } from '../../../domain/entities/user.entity';
 import { FilterUserDto } from './filter-user.dto';

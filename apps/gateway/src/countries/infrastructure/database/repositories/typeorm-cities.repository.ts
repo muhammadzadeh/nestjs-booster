@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, SelectQueryBuilder } from 'typeorm';
-import { Paginated, PaginationOption } from '../../../../common/database';
+import { Paginated, PaginationOption } from '@repo/types/database';
 import { CityEntity } from '../../../domain/entities/city.entity';
 import { CitiesRepository, CityOrderBy, FindCityOptions } from '../../../domain/repositories/cities.repository';
 import { TypeormCityEntity } from '../entities/typeorm-city.entity';

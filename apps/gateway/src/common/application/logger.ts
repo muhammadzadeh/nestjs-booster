@@ -2,7 +2,7 @@ import { INestApplication } from '@nestjs/common';
 import * as requestIp from '@supercharge/request-ip';
 import { WINSTON_MODULE_NEST_PROVIDER, WinstonLogger } from 'nest-winston';
 import { Configuration } from '@repo/config';
-import { now } from '../time';
+import { now } from '@repo/utils/time';
 
 const getUserIp = (request: any): string | undefined => {
   return requestIp.getClientIp(request);

@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, SelectQueryBuilder } from 'typeorm';
-import { Paginated } from '../../../../common/database';
+import { Paginated } from '@repo/types/database';
 import { STORAGE_PROVIDER_TOKEN, StorageProvider } from '../../../application/storage-provider';
 import { AttachmentEntity, AttachmentVisibility } from '../../../domain/entities/attachments.entity';
 import { AttachmentsRepository, FindAttachmentOptions } from '../../../domain/repositories/attachments.repository';

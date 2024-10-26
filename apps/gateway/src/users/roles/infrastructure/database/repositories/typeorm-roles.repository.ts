@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, SelectQueryBuilder } from 'typeorm';
-import { Paginated, PaginationOption } from '../../../../../common/database';
+import { Paginated, PaginationOption } from '@repo/types/database';
 import { RoleEntity } from '../../../domain/entities/role.entity';
 import { FindRoleOptions, RoleOrderBy, RolesRepository } from '../../../domain/repositories/roles.repository';
 import { TypeormRoleEntity } from '../entities/typeorm-role.entity';

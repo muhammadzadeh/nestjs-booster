@@ -3,7 +3,7 @@ import { Logger } from '@nestjs/common';
 import { camelCaseObject } from '@repo/utils';
 import { lastValueFrom } from 'rxjs';
 import { DataSource } from 'typeorm';
-import { BaseSeeder, DatabaseSeeder } from '../../common/database';
+import { BaseSeeder, DatabaseSeeder } from '@repo/types/database';
 import { CityEntity } from '../domain/entities/city.entity';
 import { CountryEntity } from '../domain/entities/country.entity';
 import { StateEntity } from '../domain/entities/state.entity';

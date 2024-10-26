@@ -14,7 +14,7 @@ import { AttachmentsModule } from '../attachments/attachments.module';
 import { AuthenticationModule } from '../authentication/infrastructure/authentication.module';
 import { CacheServiceModule } from '../common/cache/cache.module';
 import { CaptchaModule } from '../common/captcha/captcha.module';
-import { DATABASE_SEEDER_TAG } from '../common/database';
+import { DATABASE_SEEDER_TAG } from '@repo/types/database';
 import { AuthModule } from '../common/guards';
 import { HealthController } from '../common/health/health.controller';
 import { RabbitMQModule } from '../common/rabbit/infrastructure/rabbit-mq.module';

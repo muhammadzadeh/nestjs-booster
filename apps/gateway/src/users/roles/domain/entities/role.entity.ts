@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import { now } from '../../../../common/time';
+import { now } from '@repo/utils/time';
 import { UserId } from '@repo/types/common.types';
 export class RoleEntity {
   constructor(title: string, permissions: Permission[]);

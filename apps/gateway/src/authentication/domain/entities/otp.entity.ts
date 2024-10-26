@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import { now } from '../../../common/time';
+import { now } from '@repo/utils/time';
 
 export enum OTPType {
   CODE = 'code',

@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Paginated, PaginationOption } from '../../common/database';
+import { Paginated, PaginationOption } from '@repo/types/database';
 import { CityRegionEntity } from '../domain/entities/city-region.entity';
 import { CityEntity } from '../domain/entities/city.entity';
 import { CountryEntity } from '../domain/entities/country.entity';

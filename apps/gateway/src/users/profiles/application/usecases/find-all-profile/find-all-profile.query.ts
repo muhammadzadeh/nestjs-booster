@@ -1,5 +1,5 @@
 import { BaseCommand } from '../../../../../common/commands/base.command';
-import { PaginationOption } from '../../../../../common/database';
+import { PaginationOption } from '@repo/types/database';
 import { FindUserOptions, UserOrderBy } from '../../../domain/repositories/users.repository';
 
 export class FindAllProfileQuery extends BaseCommand {

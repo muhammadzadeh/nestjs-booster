@@ -1,4 +1,4 @@
-import { Paginated, PaginationOption } from '../../../../common/database';
+import { Paginated, PaginationOption } from '@repo/types/database';
 import { Email, Mobile, UserId, Username } from '@repo/types/common.types';
 import { UserEntity } from '../entities/user.entity';
 

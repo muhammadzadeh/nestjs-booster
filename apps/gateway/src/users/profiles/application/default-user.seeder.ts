@@ -1,7 +1,7 @@
 import { Inject, Logger } from '@nestjs/common';
 import { Configuration } from '@repo/config';
-import { BaseSeeder, DatabaseSeeder } from '../../../common/database';
-import { randomStringAsync } from '../../../common/string';
+import { BaseSeeder, DatabaseSeeder } from '@repo/types/database';
+import { randomStringAsync } from '@repo/utils/string';
 import { RolesService } from '../../roles/application/roles.service';
 import { Permission } from '../../roles/domain/entities/role.entity';
 import { UserEntity } from '../domain/entities/user.entity';
