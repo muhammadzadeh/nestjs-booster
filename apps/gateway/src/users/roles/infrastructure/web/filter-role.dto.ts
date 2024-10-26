@@ -1,6 +1,6 @@
 import { IsEnum, IsNotEmpty } from 'class-validator';
 import { RoleOrderBy } from '../../domain/repositories/roles.repository';
-import { PaginationDto } from '../../../../common/dto/pagination.dto';
+import { PaginationDto } from '@repo/types/pagination.dto';
 
 export class FilterRoleDto extends PaginationDto {
   @IsNotEmpty()

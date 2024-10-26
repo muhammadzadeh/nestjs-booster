@@ -1,5 +1,5 @@
 import { IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { PaginationDto } from '../../../common/dto/pagination.dto';
+import { PaginationDto } from '@repo/types/pagination.dto';
 import { StateOrderBy } from '../../domain/repositories/states.repository';
 
 export class FilterStateDto extends PaginationDto {
