@@ -104,7 +104,7 @@ export class GlobalExceptionFilter implements ExceptionFilter, RpcExceptionFilte
   }
 
   private getGlobalMapper(): GlobalExceptionMapper {
-    return this.mappers['BaseHttpException'];
+    return this.mappers['BaseHttpException']!;
   }
 
   private getDebugData(exception: any): any {

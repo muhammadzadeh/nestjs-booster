@@ -24,13 +24,13 @@
     }
   },
   "exports": {
-    "enum": {
-      "types": "./src/enums.ts",
-      "default": "./dist/enums.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     },
-    "constant": {
-      "types": "./src/constants.ts",
-      "default": "./dist/constants.js"
+    "./*": {
+      "import": "./dist/*.js",
+      "require": "./dist/*.js"
     }
   },
   "dependencies": {

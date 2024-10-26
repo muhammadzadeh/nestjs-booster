@@ -25,8 +25,12 @@
   },
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./*": {
+      "import": "./dist/*.js",
+      "require": "./dist/*.js"
     }
   },
   "dependencies": {

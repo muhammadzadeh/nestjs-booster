@@ -18,7 +18,7 @@ export class ValidationException extends Error {
 
   private static extract(e: ValidationError, parent: string[]): Errors[] {
     return Object.keys(e.constraints!).map((validation: string) => ({
-      message: e.constraints![validation],
+      message: e.constraints![validation]!,
       field: [...parent, e.property],
       validation: validation,
     }));

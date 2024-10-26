@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { Configuration } from '@repo/config';
 import {
   EmailNotificationPayload,
@@ -11,6 +11,8 @@ import { OtpGeneration } from './otp.service';
 
 @Injectable()
 export class AuthenticationNotifier {
+  private readonly logger = new Logger(AuthenticationNotifier.name);
+
   constructor(private readonly config: Configuration) {}
 
   async sendOtp(data: OtpGeneration, otp: string): Promise<void> {
@@ -30,6 +32,12 @@ export class AuthenticationNotifier {
     };
 
     const strategyKey = data.type === OTPType.CODE ? `${OTPType.CODE}` : `${data.type}_${data.reason}`;
+
+    if (!emailDataStrategy[strategyKey]) {
+      this.logger.log(`The emailDataStrategy is undefined for  ${data.type} and ${data.reason}`);
+      return;
+    }
+
     const emailData = emailDataStrategy[strategyKey]();
 
     sendNotification({
@@ -44,7 +52,7 @@ export class AuthenticationNotifier {
       smsData: {
         message: otp,
         to: data.mobile!,
-        template: 'verify'
+        template: 'verify',
       },
     });
   }

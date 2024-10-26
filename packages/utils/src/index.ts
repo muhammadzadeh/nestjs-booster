@@ -71,7 +71,7 @@ export function camelCaseObject<T>(obj: any): T {
 
   for (const key in obj) {
     if (obj[key] || obj.hasOwnProperty(key)) {
-      const camelCasedKey = key.replace(/_([a-z])/g, (g) => g[1].toUpperCase());
+      const camelCasedKey = key.replace(/_([a-z])/g, (g) => g[1]!.toUpperCase());
       camelCased[camelCasedKey] = camelCaseObject(obj[key]);
     }
   }

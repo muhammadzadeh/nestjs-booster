@@ -20,7 +20,7 @@ export function randomStringSync(options: {
   type: 'url-safe' | 'numeric' | 'memory-numeric' | 'distinguishable' | 'ascii-printable' | 'alphanumeric';
 }): string {
   let result = '';
-  const currentCharacters = characters[options.type];
+  const currentCharacters = characters[options.type]!;
   const charactersLength = currentCharacters.length;
   for (let i = 0; i < options.length; i++) {
     result += currentCharacters.charAt(Math.floor(Math.random() * charactersLength));

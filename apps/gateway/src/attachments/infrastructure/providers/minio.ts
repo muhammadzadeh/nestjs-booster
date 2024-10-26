@@ -146,7 +146,7 @@ export class MinioStorageProvider implements StorageProvider {
 
   private getBucketAndKey(path: string): { bucket: string; key: string } {
     const parts = path.split('/');
-    return { bucket: parts[0], key: parts.slice(1).join('/') };
+    return { bucket: parts[0]!, key: parts.slice(1).join('/') };
   }
 
   private async streamToBuffer(stream: Readable): Promise<Buffer> {

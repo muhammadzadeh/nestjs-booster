@@ -45,7 +45,7 @@ export class AttachmentsService {
 
   async findOne(attachmentId: AttachmentId): Promise<AttachmentEntity | null> {
     const items = await this.findMany({ attachmentIds: [attachmentId] });
-    return items[0];
+    return items[0] ?? null;
   }
 
   async findMany(command: FindManyAttachmentCommand): Promise<AttachmentEntity[]> {

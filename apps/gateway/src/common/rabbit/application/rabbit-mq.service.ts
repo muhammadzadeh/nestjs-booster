@@ -66,6 +66,10 @@ export class RabbitMqService {
   async registerExchange(exchanges: RabbitMQExchangeOptions[]): Promise<void> {
     for (let i = 0; this.connection && exchanges && i < exchanges.length; i++) {
       const exchange = exchanges[i];
+      if (!exchange) {
+        continue;
+      }
+
       const channel = await this.connection.createChannel();
       await channel.prefetch(2);
       await channel.assertExchange(exchange.name, exchange.type, { durable: true });

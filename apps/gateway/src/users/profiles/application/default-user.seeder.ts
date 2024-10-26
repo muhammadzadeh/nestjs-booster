@@ -41,7 +41,7 @@ export class DefaultUserSeeder extends BaseSeeder {
     const defaultPassword = defaultUser?.password ?? (await this.generateDefaultPassword());
     const user = new UserEntity('Super', 'Admin', defaultEmail, defaultMobile);
     user.updatePassword(defaultPassword);
-    user.updateRole(roles[0].id);
+    user.updateRole(roles[0]!.id);
 
     if (defaultEmail) {
       user.markEmailAsVerified();

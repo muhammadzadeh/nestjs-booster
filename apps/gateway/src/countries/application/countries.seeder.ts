@@ -1,9 +1,9 @@
 import { HttpService } from '@nestjs/axios';
 import { Logger } from '@nestjs/common';
+import { camelCaseObject } from '@repo/utils';
 import { lastValueFrom } from 'rxjs';
 import { DataSource } from 'typeorm';
 import { BaseSeeder, DatabaseSeeder } from '../../common/database';
-import { camelCaseObject } from '@repo/utils';
 import { CityEntity } from '../domain/entities/city.entity';
 import { CountryEntity } from '../domain/entities/country.entity';
 import { StateEntity } from '../domain/entities/state.entity';
@@ -37,6 +37,10 @@ export class CountriesSeeder extends BaseSeeder {
     this.logger.verbose(`Seeding country and state data ...`);
     for (let i = 0; i < countries.length; i++) {
       const country = countries[i];
+      if (!country) {
+        continue;
+      }
+
       await this.createCountryRecord(country);
     }
     this.logger.verbose(`Country data seeded successfully!`);
@@ -57,6 +61,10 @@ export class CountriesSeeder extends BaseSeeder {
 
     for (let i = 0; i < states.length; i++) {
       const state = states[i];
+      if (!state) {
+        continue;
+      }
+
       await this.createStateAndCityRecords(createdCountry.id, state);
     }
   }
@@ -65,7 +73,7 @@ export class CountriesSeeder extends BaseSeeder {
     const { id, cities, stateCode, ...stateWithoutCity } = state;
     const createdState = await this.datasource.manager
       .getRepository(TypeormStateEntity)
-      .save({ ...stateWithoutCity, stateCode: stateCode?? stateWithoutCity.name, countryId });
+      .save({ ...stateWithoutCity, stateCode: stateCode ?? stateWithoutCity.name, countryId });
 
     const mappedCities = cities.map((city) => {
       const { id, stateId, ...cityWithoutId } = city;

@@ -34,7 +34,7 @@ export class ConfigModule {
         {
           provide: Configuration,
           useFactory: async (): Promise<Configuration> => {
-            const configOptions: ConfigOptions = await options.useFactory(...options.inject);
+            const configOptions: ConfigOptions = await options.useFactory(...options.inject!);
             const defaultConfigLoader = new DefaultConfigLoaderService(configOptions.filePath);
 
             const defaultConfig = defaultConfigLoader.getMappedConfig<Configuration>();

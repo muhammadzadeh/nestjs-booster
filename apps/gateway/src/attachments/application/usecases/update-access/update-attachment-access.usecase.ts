@@ -36,8 +36,16 @@ export class UpdateAttachmentAccessUsecase {
   private async grantAttachmentAccess(options: GrantAttachmentAccess): Promise<void> {
     for (let j = 0; j < options.attachmentIds.length; j++) {
       const attachmentId = options.attachmentIds[j];
+      if (!attachmentId) {
+        continue;
+      }
+
       for (let i = 0; i < options.userIds.length; i++) {
         const userId = options.userIds[i];
+        if (!userId) {
+          continue;
+        }
+
         await this.attachmentUsersRepository.save(new AttachmentUserEntity(attachmentId, userId));
       }
     }

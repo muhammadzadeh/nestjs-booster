@@ -23,6 +23,10 @@ export class UpdateAttachmentShareFlagUsecase {
 
     for (let i = 0; i < items.length; i++) {
       const attachment = items[i];
+      if (!attachment) {
+        continue;
+      }
+
       await attachment.updateSharedFlag(command.isShared);
       await this.attachmentsRepository.save(attachment);
     }
