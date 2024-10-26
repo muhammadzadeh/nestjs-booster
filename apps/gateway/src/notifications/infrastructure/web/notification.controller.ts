@@ -2,7 +2,7 @@ import { Body, Get, Post, Query } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { CommonController } from '@repo/decorator';
 import { CurrentUser } from '../../../authentication/infrastructure/web/decorators';
-import { DoneResponse } from '../../../common/serialization';
+import { DoneResponse } from '@repo/types/serialization';
 import { NotificationsService } from '../../application/notifications.service';
 import { AddPushTokenDto } from './add-push-token.dto';
 import { FilterNotificationDto } from './filter-notification.dto';

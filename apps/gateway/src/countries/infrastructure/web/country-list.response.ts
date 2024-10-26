@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import { Paginated } from '@repo/types/database';
-import { ListResponse } from '../../../common/serialization';
+import { ListResponse } from '@repo/types/serialization';
 import { CountryEntity } from '../../domain/entities/country.entity';
 import { CountryResponse } from './country.response';
 import { FilterCountryDto } from './filter-country.dto';

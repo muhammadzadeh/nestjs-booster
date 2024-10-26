@@ -3,7 +3,7 @@ import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { CommonController } from '@repo/decorator';
 import { IgnoreAuthorizationGuard, RequiredPermissions } from '../../../authentication/infrastructure/web/decorators';
 import { FineOneUUIDDto } from '../../../common/dto/find-one-uuid.dto';
-import { DoneResponse } from '../../../common/serialization';
+import { DoneResponse } from '@repo/types/serialization';
 import { Permission } from '../../../users/roles/domain/entities/role.entity';
 import { CountriesService } from '../../application/countries.service';
 import { CityListResponse } from './city-list.response';

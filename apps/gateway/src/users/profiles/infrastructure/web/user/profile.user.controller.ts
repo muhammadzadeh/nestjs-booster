@@ -2,7 +2,7 @@ import { Body, Get, Put } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { UserController } from '@repo/decorator';
 import { CurrentUser } from '../../../../../authentication/infrastructure/web/decorators';
-import { DoneResponse } from '../../../../../common/serialization';
+import { DoneResponse } from '@repo/types/serialization';
 import { UsersService } from '../../../application/users.service';
 import { UserResponse } from '../common/user.response';
 import { UpdateMyProfileDto } from './update-my-profile.dto';

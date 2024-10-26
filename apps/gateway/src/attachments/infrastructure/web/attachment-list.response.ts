@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { ListResponse } from '../../../common/serialization';
+import { ListResponse } from '@repo/types/serialization';
 import { AttachmentEntity } from '../../domain/entities/attachments.entity';
 import { AttachmentResponse } from './attachment.response';
 

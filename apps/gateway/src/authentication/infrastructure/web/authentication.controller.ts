@@ -2,7 +2,7 @@ import { Body, Post } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { CommonController } from '@repo/decorator';
 import { Captcha } from '../../../common/captcha/infrastructure/web/decorators';
-import { DoneResponse } from '../../../common/serialization';
+import { DoneResponse } from '@repo/types/serialization';
 import { AuthService } from '../../application/services/auth.service';
 import { IgnoreAuthorizationGuard, Signup } from './decorators';
 import {
