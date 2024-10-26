@@ -4,7 +4,7 @@ import { Type } from 'class-transformer';
 import { IsNotEmpty, IsString } from 'class-validator';
 import { IsIdentifier } from '@repo/validator/is-identifier.validator';
 import { IsNotUUID } from '@repo/validator/is-not-uuid.validator';
-import { Email, Mobile } from '../../../../common/types';
+import { Email, Mobile } from '@repo/types/common.types';
 import {
   AuthenticateByThirdPartyData,
   SignupByOtpData,

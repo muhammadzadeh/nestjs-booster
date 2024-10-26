@@ -4,7 +4,7 @@ import { ErrorCode } from '@repo/types/error-code.enum';
 import { randomUUID } from 'crypto';
 import { Hash } from '../../../../common/hash';
 import { now } from '../../../../common/time';
-import { Email, Mobile, UserId, Username } from '../../../../common/types';
+import { Email, Mobile, UserId, Username } from '@repo/types/common.types';
 export class UserEntity {
   constructor(firstName: string | null, lastName: string | null, email: Email | null, mobile: Mobile | null);
   constructor(

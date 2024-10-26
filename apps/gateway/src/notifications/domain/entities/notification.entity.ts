@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto';
 import { MulticastMessage } from 'firebase-admin/messaging';
 import { now } from '../../../common/time';
-import { Email, Mobile } from '../../../common/types';
+import { Email, Mobile } from '@repo/types/common.types';
 
 export class NotificationEntity {
   constructor(

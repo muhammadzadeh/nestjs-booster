@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { Email, Mobile, UserId, Username } from '../../../../../common/types';
+import { Email, Mobile, UserId, Username } from '@repo/types/common.types';
 import { UserEntity } from '../../../domain/entities/user.entity';
 import { AvatarResponse } from './avatar.response';
 

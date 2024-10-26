@@ -16,3 +16,9 @@ export enum MetaKey {
     USER = 'user',
     COMMON = 'common',
   }
+
+
+export enum OrderDir {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}

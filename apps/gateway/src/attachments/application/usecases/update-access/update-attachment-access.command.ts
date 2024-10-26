@@ -1,5 +1,5 @@
 import { BaseCommand } from '../../../../common/commands/base.command';
-import { UserId } from '../../../../common/types';
+import { UserId } from '@repo/types/common.types';
 
 export interface GrantAttachmentAccess {
   readonly attachmentIds: string[];

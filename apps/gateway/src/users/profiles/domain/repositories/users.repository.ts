@@ -1,5 +1,5 @@
 import { Paginated, PaginationOption } from '../../../../common/database';
-import { Email, Mobile, UserId, Username } from '../../../../common/types';
+import { Email, Mobile, UserId, Username } from '@repo/types/common.types';
 import { UserEntity } from '../entities/user.entity';
 
 export const USERS_REPOSITORY_TOKEN = Symbol('UsersRepository');

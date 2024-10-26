@@ -1,7 +1,7 @@
 import { Type } from 'class-transformer';
 import { IsEnum, IsNotEmpty, IsNumber, Max, Min } from 'class-validator';
 import { MAX_PAGE_SIZE } from '../constants';
-import { OrderDir } from '../types';
+import { OrderDir } from '@repo/types/common.enums';
 
 export class PaginationDto {
   @Min(1)

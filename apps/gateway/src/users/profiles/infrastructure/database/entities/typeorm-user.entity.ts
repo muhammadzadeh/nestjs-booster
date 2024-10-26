@@ -1,5 +1,5 @@
 import { Check, Column, Entity, Index, PrimaryGeneratedColumn, Unique } from 'typeorm';
-import { Email, Mobile, UserId, Username } from '../../../../../common/types';
+import { Email, Mobile, UserId, Username } from '@repo/types/common.types';
 import { UserEntity } from '../../../domain/entities/user.entity';
 
 @Entity({

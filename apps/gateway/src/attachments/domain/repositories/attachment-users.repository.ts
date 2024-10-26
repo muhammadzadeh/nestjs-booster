@@ -1,4 +1,4 @@
-import { UserId } from '../../../common/types';
+import { UserId } from '@repo/types/common.types';
 import { AttachmentUserEntity } from '../entities/attachment-users.entity';
 
 export interface FindAttachmentUserOptions {

@@ -1,5 +1,5 @@
 import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
-import { UserId } from '../../../../common/types';
+import { UserId } from '@repo/types/common.types';
 import { AttachmentId } from '../../../domain/entities/attachment-users.entity';
 import { AttachmentEntity, AttachmentVisibility, MimeType } from '../../../domain/entities/attachments.entity';
 

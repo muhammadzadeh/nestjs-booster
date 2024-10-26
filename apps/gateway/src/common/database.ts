@@ -1,5 +1,5 @@
 import { Injectable, SetMetadata, applyDecorators } from '@nestjs/common';
-import { OrderDir } from './types';
+import { OrderDir } from '@repo/types/common.enums';
 
 export abstract class BaseSeeder {
   abstract run(): Promise<void>;

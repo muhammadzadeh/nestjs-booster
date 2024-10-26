@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, SelectQueryBuilder } from 'typeorm';
 import { MIN_PAGE_NUMBER, MIN_PAGE_SIZE } from '../../../../common/constants';
 import { Paginated } from '../../../../common/database';
-import { OrderDir } from '../../../../common/types';
+import { OrderDir } from '@repo/types/common.enums';
 import { NotificationEntity } from '../../../domain/entities/notification.entity';
 import {
   FindNotificationData,

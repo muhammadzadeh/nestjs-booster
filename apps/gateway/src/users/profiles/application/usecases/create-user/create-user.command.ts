@@ -1,5 +1,5 @@
 import { BaseCommand } from '../../../../../common/commands/base.command';
-import { Email, Mobile } from '../../../../../common/types';
+import { Email, Mobile } from '@repo/types/common.types';
 
 export class CreateUserCommand extends BaseCommand {
   readonly firstName?: string | null;

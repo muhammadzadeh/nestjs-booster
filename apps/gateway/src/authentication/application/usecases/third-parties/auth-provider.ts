@@ -1,4 +1,4 @@
-import { Email } from '../../../../common/types';
+import { Email } from '@repo/types/common.types';
 
 export interface AuthProvider {
   authenticate(data: Auth): Promise<AuthUser>;

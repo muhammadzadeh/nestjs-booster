@@ -3,7 +3,7 @@ import { Inject, Injectable, Logger } from '@nestjs/common';
 import { isUUID } from 'validator';
 import { AttachmentsService } from '../../../../../attachments/application/attachments.service';
 import { AttachmentEntity, AttachmentVisibility } from '../../../../../attachments/domain/entities/attachments.entity';
-import { UserId } from '../../../../../common/types';
+import { UserId } from '@repo/types/common.types';
 import { InvalidAvatarException, UserEntity } from '../../../domain/entities/user.entity';
 import { USERS_REPOSITORY_TOKEN, UsersRepository } from '../../../domain/repositories/users.repository';
 import { CreateUserCommand } from './create-user.command';

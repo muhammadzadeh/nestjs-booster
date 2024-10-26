@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { isEmail } from 'class-validator';
-import { Email, Mobile, UserId, Username } from '../../../common/types';
+import { Email, Mobile, UserId, Username } from '@repo/types/common.types';
 import { OTPType } from '../../domain/entities';
 import { ImpersonationCommand } from '../usecases/impersonation/impersonation.command';
 import { ImpersonationUsecase } from '../usecases/impersonation/impersonation.usecase';

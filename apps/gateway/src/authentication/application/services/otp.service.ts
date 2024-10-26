@@ -5,7 +5,7 @@ import { createHash } from 'crypto';
 import { Duration } from 'luxon';
 import { randomStringSync } from '../../../common/string';
 import { now } from '../../../common/time';
-import { Email, Mobile, UserId } from '../../../common/types';
+import { Email, Mobile, UserId } from '@repo/types/common.types';
 import { OTPEntity, OTPReason, OTPType } from '../../domain/entities';
 import { OTPRepository, OTP_REPOSITORY_TOKEN } from '../../domain/repositories';
 
