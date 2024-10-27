@@ -1,7 +1,7 @@
 import { DynamicModule, FactoryProvider, Module, ModuleMetadata, OnModuleInit } from '@nestjs/common';
 import { DiscoveryService, MetadataScanner } from '@nestjs/core';
-import { RABBIT_MQ_OPTIONS, RABBIT_MQ_SUBSCRIBER_OPTIONS } from '../application/constants';
-import { RabbitMQOptions, RabbitMqService } from '../application/rabbit-mq.service';
+import { RABBIT_MQ_OPTIONS, RABBIT_MQ_SUBSCRIBER_OPTIONS } from './constants';
+import { RabbitMQOptions, RabbitMqService } from './rabbit-mq.service';
 
 export interface AsyncRabbitMQOptions extends Pick<ModuleMetadata, 'imports'> {
   useFactory: (...args: any[]) => Promise<RabbitMQOptions> | RabbitMQOptions;

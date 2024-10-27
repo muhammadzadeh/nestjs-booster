@@ -23,6 +23,7 @@
     "@repo/config": "*",
     "@repo/types": "*",
     "@repo/exception": "*",
+    "@repo/rabbit": "*",
     "@aws-sdk/client-s3": "^3.678.0",
     "@fastify/helmet": "^11.1.1",
     "@fastify/multipart": "^8.3.0",
