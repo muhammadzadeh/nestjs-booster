@@ -44,7 +44,14 @@ import { ProfileModule } from '../users/profiles/infrastructure/profiles.module'
           watch: true,
         },
       }),
-      resolvers: [{ use: QueryResolver, options: ['lang'] }, AcceptLanguageResolver, new HeaderResolver(['x-lang'])],
+      resolvers: [
+        {
+          use: QueryResolver,
+          options: ['lang'],
+        },
+        AcceptLanguageResolver,
+        new HeaderResolver(['x-lang']),
+      ],
     }),
     TypeOrmModule.forRootAsync({
       inject: [Configuration],

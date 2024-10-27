@@ -6,11 +6,7 @@ import { ExceptionHandler } from './exception-handler.interface';
 
 @Injectable()
 export class RpcExceptionHandler implements ExceptionHandler {
-  handle(
-    error: ExceptionResponse,
-    _host: ArgumentsHost,
-    _httpAdapterHost: HttpAdapterHost
-  ): Observable<any> {
+  handle(error: ExceptionResponse, _host: ArgumentsHost, _httpAdapterHost: HttpAdapterHost): Observable<any> {
     return throwError(() => error);
   }
 }

@@ -1,6 +1,6 @@
 import { ArgumentsHost, ExceptionFilter, Logger, RpcExceptionFilter } from '@nestjs/common';
 import { HttpAdapterHost } from '@nestjs/core';
-import { valueToBoolean } from '@repo/decorator';
+import { Configuration } from '@repo/config';
 import { captureException } from '@sentry/node';
 import { isNumber, isString } from 'lodash';
 import { I18nService } from 'nestjs-i18n';
@@ -22,7 +22,6 @@ import {
 
 export class GlobalExceptionFilter implements ExceptionFilter, RpcExceptionFilter {
   protected readonly logger = new Logger(GlobalExceptionFilter.name);
-  protected isDebug: boolean = valueToBoolean(process.env.DEBUG)!;
 
   private readonly handlers: Record<'http' | 'rpc' | 'ws', ExceptionHandler> = {
     http: new HttpExceptionHandler(),
@@ -48,6 +47,7 @@ export class GlobalExceptionFilter implements ExceptionFilter, RpcExceptionFilte
 
   constructor(
     private readonly httpAdapterHost: HttpAdapterHost,
+    private readonly configuration: Configuration,
     private readonly i18n: I18nService,
   ) {}
 
@@ -57,11 +57,11 @@ export class GlobalExceptionFilter implements ExceptionFilter, RpcExceptionFilte
 
       const mappedException = this.mapException(exception);
 
-      if (this.isDebug) {
+      if (this.configuration.debug) {
         mappedException.debug = this.getDebugData(exception);
       }
       if (!exception.useOriginalMessage) {
-        mappedException.message = this.i18n.t<string, string>(`error-messages.${mappedException.errorCode}`);
+        mappedException.message = this.i18n.translate(`error-messages.${mappedException.errorCode}`);
       }
 
       return this.handlers[host.getType()].handle(mappedException, host, this.httpAdapterHost);
