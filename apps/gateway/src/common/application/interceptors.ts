@@ -30,6 +30,6 @@ class SwaggerNoCacheInterceptor implements NestInterceptor {
   }
 }
 
-export default (app: INestApplication): void => {
+export function configureGlobalInterceptors(app: INestApplication): void {
   app.useGlobalInterceptors(new SwaggerNoCacheInterceptor());
-};
+}

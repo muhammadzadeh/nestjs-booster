@@ -1,15 +1,15 @@
 import helmet from '@fastify/helmet';
 import { NestFastifyApplication } from '@nestjs/platform-fastify';
+import { Configuration } from '@repo/config';
 import {
   AuthorizationGuard,
   CheckPermissionGuard,
   IsUserEnableGuard,
 } from '../../authentication/infrastructure/web/guards';
 import { CaptchaGuard } from '../captcha/infrastructure/web/guard';
-import { Configuration } from '@repo/config';
 import { ThrottlerBehindProxyGuard } from '../guards/throttler-behind-proxy.guard';
 
-export default (app: NestFastifyApplication): void => {
+export function configureSecurity(app: NestFastifyApplication): void {
   const configService = app.get(Configuration);
   const isSwaggerEnabled = configService.swagger?.enabled;
 
@@ -33,4 +33,4 @@ export default (app: NestFastifyApplication): void => {
         }
       : {},
   );
-};
+}

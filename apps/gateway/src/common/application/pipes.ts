@@ -1,7 +1,7 @@
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { ValidationException } from '@repo/exception';
 
-export default (app: INestApplication): void => {
+export function configureGlobalPipes(app: INestApplication): void {
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
@@ -10,4 +10,4 @@ export default (app: INestApplication): void => {
       stopAtFirstError: true,
     }),
   );
-};
+}

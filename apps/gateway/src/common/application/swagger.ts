@@ -5,8 +5,8 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as apiExcludeControllerExplorer from '@nestjs/swagger/dist/explorers/api-exclude-controller.explorer';
 import * as swaggerExplorer from '@nestjs/swagger/dist/swagger-explorer';
 import { Configuration } from '@repo/config';
-import { TENANT_CONFIG } from '@repo/types/constants';
 import { ControllerType, MetaKey } from '@repo/types/common.enums';
+import { TENANT_CONFIG } from '@repo/types/constants';
 
 // This type is used to mark the module as mutable
 type Mutable<T> = { -readonly [P in keyof T]: T[P] };
@@ -76,7 +76,7 @@ function configureGlobalPrefix(): (type: string) => void {
   };
 }
 
-export default (app: INestApplication): void => {
+export function configureSwagger(app: INestApplication): void {
   const cfg = app.get(Configuration).swagger;
   const appConfig = app.get(Configuration).app;
   if (cfg == undefined || !cfg.enabled) return;
@@ -96,4 +96,4 @@ export default (app: INestApplication): void => {
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup(route + path, app, document);
   }
-};
+}

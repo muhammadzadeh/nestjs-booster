@@ -1,5 +1,5 @@
 import { INestApplication } from '@nestjs/common';
 
-export default (app: INestApplication): void => {
+export function configureGlobalCors(app: INestApplication): void {
   app.enableCors();
-};
+}

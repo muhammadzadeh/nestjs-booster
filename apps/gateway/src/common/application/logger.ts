@@ -1,14 +1,14 @@
 import { INestApplication } from '@nestjs/common';
-import * as requestIp from '@supercharge/request-ip';
-import { WINSTON_MODULE_NEST_PROVIDER, WinstonLogger } from 'nest-winston';
 import { Configuration } from '@repo/config';
 import { now } from '@repo/utils/time';
+import * as requestIp from '@supercharge/request-ip';
+import { WINSTON_MODULE_NEST_PROVIDER, WinstonLogger } from 'nest-winston';
 
 const getUserIp = (request: any): string | undefined => {
   return requestIp.getClientIp(request);
 };
 
-export default (app: INestApplication): void => {
+export function configureGlobalLogger(app: INestApplication): void {
   const logger: WinstonLogger = app.get(WINSTON_MODULE_NEST_PROVIDER);
   const configuration = app.get(Configuration);
 
@@ -85,4 +85,4 @@ export default (app: INestApplication): void => {
 
     logger.log(log);
   }
-};
+}
