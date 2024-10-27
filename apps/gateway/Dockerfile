@@ -1,36 +1,37 @@
-FROM node:lts-bullseye-slim AS builder
-    
-USER root
+FROM node:20-alpine AS base
 
+FROM base AS builder
+RUN apk update && apk add --no-cache libc6-compat
 WORKDIR /app
 
-RUN chown node:node .
+RUN npm install -g turbo
 
-USER node
+COPY . .
 
-COPY --chown=node:node ["package.json", "package-lock.json", "./"]
+RUN turbo prune --scope=gateway --docker
 
-RUN set -x && \
-  NODE_ENV=production npm ci && \
-  mv node_modules /tmp && \
-  npm ci && \
-  rm -rf /home/node/.cache
 
-COPY --chown=node:node . .
-
-RUN npm run build
-
-#FROM gcr.io/distroless/nodejs AS runner
-FROM node:lts-bullseye-slim AS runner
-
+FROM base AS installer
+RUN apk update && apk add --no-cache libc6-compat
 WORKDIR /app
 
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/deployments/config.yml ./config.yml
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/package-lock.json ./package-lock.json
-COPY --from=builder /tmp/node_modules ./node_modules
+COPY --from=builder /app/out/json/ .
 
-CMD ["dist/main"]
+RUN npm ci --production
+
+COPY --from=builder /app/out/full/ .
+
+RUN npm install turbo
+
+RUN npx turbo build --filter=gateway...
+
+FROM gcr.io/distroless/nodejs20-debian12 AS runner
+WORKDIR /app
+
+COPY --from=installer /app/apps/gateway/deployments/config.yml ./config.yml
+COPY --from=installer /app/apps/gateway/dist/ ./dist/
+COPY --from=installer /app/node_modules/ ./node_modules/
+
+CMD ["dist/main.js"]
 
 EXPOSE 80
