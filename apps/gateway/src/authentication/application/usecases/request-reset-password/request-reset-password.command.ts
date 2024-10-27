@@ -1,4 +1,4 @@
-import { BaseCommand } from '../../../../common/commands/base.command';
+import { BaseCommand } from '@repo/types/commands/base.command';
 import { Email, Mobile } from '@repo/types/common.types';
 
 export class RequestResetPasswordCommand extends BaseCommand {

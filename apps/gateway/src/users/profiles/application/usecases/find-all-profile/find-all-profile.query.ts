@@ -1,4 +1,4 @@
-import { BaseCommand } from '../../../../../common/commands/base.command';
+import { BaseCommand } from '@repo/types/commands/base.command';
 import { PaginationOption } from '@repo/types/database';
 import { FindUserOptions, UserOrderBy } from '../../../domain/repositories/users.repository';
 

@@ -1,4 +1,4 @@
-import { BaseCommand } from '../../../../common/commands/base.command';
+import { BaseCommand } from '@repo/types/commands/base.command';
 import { OTPType } from '../../../domain/entities';
 
 export class SigninByOtpCommand extends BaseCommand {

@@ -1,4 +1,4 @@
-import { BaseCommand } from '../../../../../common/commands/base.command';
+import { BaseCommand } from '@repo/types/commands/base.command';
 import { UserEntity } from '../../../domain/entities/user.entity';
 import { FindUserOptions } from '../../../domain/repositories/users.repository';
 
