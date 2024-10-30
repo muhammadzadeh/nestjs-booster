@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import { INestApplication, Type } from '@nestjs/common';
 import * as constants from '@nestjs/common/constants';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';

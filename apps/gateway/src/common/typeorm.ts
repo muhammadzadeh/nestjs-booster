@@ -1,10 +1,10 @@
+import path from 'path';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
 const Config: Partial<PostgresConnectionOptions> = {
-  entities: ['dist/**/entities/*.entity.js'],
+  entities: [path.join(__dirname, '..', '..', 'dist', '**', 'entities', '*.entity.js')],
   synchronize: false,
-  subscribers: ['dist/**/entities/*.entity.js'],
-  migrations: ['dist/migration/*.js'],
+  migrations: [path.join(__dirname, '..', '..', 'dist', 'migration', '*.js')],
   migrationsRun: true,
 };
 
