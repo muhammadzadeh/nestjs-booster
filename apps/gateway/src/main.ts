@@ -4,7 +4,6 @@ import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify
 import { Configuration } from '@repo/config';
 import { randomUUID } from 'crypto';
 import { AppModule } from './app/app.module';
-import './common/apm';
 import { configureGlobalCors } from './common/application/cors';
 import { configureGlobalFilters } from './common/application/exception-filters';
 import { configureGlobalInterceptors } from './common/application/interceptors';

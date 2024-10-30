@@ -57,7 +57,7 @@ export class RabbitMqService {
         this.logger.verbose(`Successfully connected to RabbitMQ broker`);
       });
 
-      this.connection.on('disconnect', ({ err }) => {
+      this.connection.on('disconnect', ({ err }: { err: Error }) => {
         this.logger.error(`Disconnected from RabbitMQ broker`, err);
       });
     }

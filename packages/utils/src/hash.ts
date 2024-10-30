@@ -1,4 +1,4 @@
-import { compare, genSaltSync, hashSync } from 'bcrypt';
+import { compare, genSaltSync, hashSync } from 'bcryptjs';
 
 export class Hash {
   static async makeAsync(data: string): Promise<string> {
