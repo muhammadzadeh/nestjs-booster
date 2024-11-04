@@ -1,92 +1,10 @@
+// This configuration only applies to the package manager root.
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint/eslint-plugin', 'deprecation', 'eslint-plugin-prettier'],
+  ignorePatterns: ["apps/**", "packages/**"],
+  extends: ["@repo/eslint-config/library.js"],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: 'tsconfig.json',
-    tsconfigRootDir: __dirname,
-    sourceType: 'module',
-  },
-  extends: [
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
-  root: true,
-  env: {
-    node: true,
-    jest: true,
-  },
-  ignorePatterns: ['.eslintrc.js'],
-  rules: {
-    '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-namespace': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
-    '@typescript-eslint/no-empty-interface': 'off',
-    '@typescript-eslint/no-empty-function': 'off',
-    'no-duplicate-imports': 'error',
-    'lines-between-class-members': ['error', 'always'],
-    'lines-around-comment': [
-      'error',
-      {
-        beforeBlockComment: true,
-        afterBlockComment: false,
-      },
-    ],
-    'sort-imports': [
-      'error',
-      {
-        ignoreCase: true,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
-        allowSeparatedGroups: false,
-      },
-    ],
-    'deprecation/deprecation': 'off',
-    'no-console': 'error',
-    'no-unneeded-ternary': [
-      'error',
-      {
-        defaultAssignment: false,
-      },
-    ],
-    '@typescript-eslint/explicit-function-return-type': 'error',
-    '@typescript-eslint/explicit-module-boundary-types': 'error',
-    '@typescript-eslint/no-empty-function': 'off',
-    '@typescript-eslint/no-empty-interface': 'off',
-    '@typescript-eslint/no-explicit-any': 'error',
-    '@typescript-eslint/prefer-readonly': 'error',
-    '@typescript-eslint/no-non-null-assertion': 'off',
-    'no-return-await': 'off',
-    '@typescript-eslint/require-await': 'error',
-    '@typescript-eslint/return-await': 'error',
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        caughtErrors: 'none',
-        args: 'none',
-      },
-    ],
-    'no-await-in-loop': 'error',
-    'require-await': 'off',
-    '@typescript-eslint/await-thenable': 'error',
-    '@typescript-eslint/no-floating-promises': 'error',
-    '@typescript-eslint/no-confusing-non-null-assertion': 'error',
-    '@typescript-eslint/no-extra-non-null-assertion': 'error',
-    '@typescript-eslint/prefer-nullish-coalescing': 'error',
-    '@typescript-eslint/no-unnecessary-type-assertion': 'error',
-    '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
-    '@typescript-eslint/no-unnecessary-condition': [
-      'error',
-      {
-        allowConstantLoopConditions: true,
-      },
-    ],
-    '@typescript-eslint/no-unnecessary-type-arguments': 'error',
-    '@typescript-eslint/no-unnecessary-type-constraint': 'error',
+    project: true,
   },
 };

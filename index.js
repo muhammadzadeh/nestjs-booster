@@ -1,1 +1,0 @@
-console.verbose('Hello world');
