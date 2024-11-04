@@ -6,7 +6,7 @@ export function configureGlobalPipes(app: INestApplication): void {
     new ValidationPipe({
       transform: true,
       whitelist: true,
-      exceptionFactory: (e): ValidationException => ValidationException.fromErrors(e),
+      exceptionFactory: (errors): ValidationException => ValidationException.fromErrors(errors),
       stopAtFirstError: true,
     }),
   );

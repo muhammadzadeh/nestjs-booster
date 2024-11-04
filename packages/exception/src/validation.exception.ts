@@ -1,9 +1,17 @@
-import { ValidationError as CommonValidationError } from '@nestjs/common';
+import { ValidationError as CommonValidationError, HttpStatus } from '@nestjs/common';
+import { ErrorCode } from '@repo/types/error-code.enum';
 import { ValidationError as ClassValidationError } from 'class-validator';
+import { BaseHttpException } from './base.exception';
 
 type ValidationError = ClassValidationError | CommonValidationError;
 
-export class ValidationException extends Error {
+export class ValidationException extends BaseHttpException {
+  readonly name = 'ValidationException';
+
+  readonly status: HttpStatus = HttpStatus.BAD_REQUEST;
+  readonly useOriginalMessage?: boolean | undefined;
+  readonly code: ErrorCode = ErrorCode.INVALID_INPUTS;
+
   constructor(public errors: FlatError[]) {
     super();
   }
